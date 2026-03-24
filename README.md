@@ -1,4 +1,4 @@
-# PolySignal — AI-Augmented Polymarket Prediction Engine
+# PolySignal - AI-Augmented Polymarket Prediction Engine
 
 > **Orderflow 001 Submission** | AI-Augmented Systems Track
 
@@ -83,11 +83,11 @@ Kelly Criterion Position Sizing
 
 Prediction markets are systematically mispriced due to three structural inefficiencies:
 
-**1. Recency bias** — retail participants overweight recent news, creating momentum that overshoots true probability.
+**1. Recency bias** - retail participants overweight recent news, creating momentum that overshoots true probability.
 
-**2. Thin market distortion** — low-liquidity markets (common at price extremes near 0.02 or 0.98) have wide spreads and slow price discovery.
+**2. Thin market distortion** - low-liquidity markets (common at price extremes near 0.02 or 0.98) have wide spreads and slow price discovery.
 
-**3. Slow probability updating near resolution** — markets approaching their deadline fail to converge to true probability quickly enough, creating exploitable drift.
+**3. Slow probability updating near resolution** - markets approaching their deadline fail to converge to true probability quickly enough, creating exploitable drift.
 
 The model's strongest signal is `price_lag7` (importance: 0.197), confirming that 7-day price history is the primary predictor of mispricing. `log_liquidity` (0.063) and `time_fraction` (0.052) further capture the structural inefficiencies above.
 
@@ -127,12 +127,12 @@ The model's strongest signal is `price_lag7` (importance: 0.197), confirming tha
 
 ```
 polysignal/
-├── engine.py              Core ML pipeline — feature engineering, ensemble model, backtest
-├── main.py                Backtest runner — produces results.json, signals.csv
-├── visualize.py           Backtest dashboard — polysignal_backtest_report.png
-├── analysis.py            Calibration, ROC curves, edge distribution — polysignal_analysis.png
+├── engine.py              Core ML pipeline - feature engineering, ensemble model, backtest
+├── main.py                Backtest runner - produces results.json, signals.csv
+├── visualize.py           Backtest dashboard - polysignal_backtest_report.png
+├── analysis.py            Calibration, ROC curves, edge distribution - polysignal_analysis.png
 ├── polymarket_api.py      Live Polymarket API connector (Gamma + CLOB)
-├── live.py                Live signal runner — falls back to simulation if API unavailable
+├── live.py                Live signal runner - falls back to simulation if API unavailable
 ├── results.json           Backtest metrics
 ├── signals.csv            Simulation signal output
 └── live_signals.csv       Real Polymarket signal output
@@ -155,11 +155,11 @@ python live.py        # connect to Polymarket API + generate live signals
 
 ## Data Sources
 
-- **Polymarket Gamma API** — active markets, volume, liquidity, spread
+- **Polymarket Gamma API** - active markets, volume, liquidity, spread
   `GET https://gamma-api.polymarket.com/markets?active=true`
-- **Polymarket CLOB API** — price history
+- **Polymarket CLOB API** - price history
   `GET https://clob.polymarket.com/prices-history`
-- **Simulation** — statistically calibrated synthetic data for reproducible backtesting (Beta-distributed true probabilities, log-normal volumes, mean-reverting price dynamics)
+- **Simulation** - statistically calibrated synthetic data for reproducible backtesting (Beta-distributed true probabilities, log-normal volumes, mean-reverting price dynamics)
 
 ---
 
@@ -176,4 +176,4 @@ where `p` = model probability, `b = avg_win / avg_loss`. The 0.5 Kelly multiplie
 
 ---
 
-*Built for Orderflow 001 — 48-hour build sprint*
+*Built for Orderflow 001 - 48-hour build sprint*
