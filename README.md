@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="submission_logo.png" alt="PolySignal Logo" width="300"/>
+  <img src="submission_logo.png" alt="PolySignal Logo" width="800"/>
 </p>
 
 # PolySignal - AI-Augmented Polymarket Prediction Engine
